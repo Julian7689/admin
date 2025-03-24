@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('vouchers', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade'); 
+            $table->string('voucher_code')->unique();
+            $table->decimal('amount', 10, 2);
+            $table->string('status')->default('pending'); 
             $table->timestamps();
         });
     }

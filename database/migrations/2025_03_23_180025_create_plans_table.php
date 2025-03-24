@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('plans', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+            $table->string('name_plan');
+            $table->date('duracion');
+            $table->string('Descripcionplan');
+            $table->enum('estadoPlan', ['activo', 'inactivo'])->default('activo');
             $table->timestamps();
         });
     }

@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('challenges', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->text('description');
             $table->string('category');
             $table->enum('Estado', ['activo', 'inactivo'])->default('activo');

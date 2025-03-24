@@ -20,15 +20,15 @@
 
             <!-- Page Heading -->
             @isset($header)
-                <header class="bg-white dark:bg-gray-800 shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                <header class="bg-gradient-to-r from-green-900 to-green-700 shadow">
+                    <div class="max-w-full mx-auto py-6 px-8">
                         {{ $header }}
                     </div>
                 </header>
             @endisset
 
             <!-- Page Content -->
-            <main>
+            <main class="max-w-full mx-auto px-8">
                 {{ $slot }}
             </main>
         </div>

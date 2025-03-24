@@ -12,10 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('rankings', function (Blueprint $table) {
-            $table->id();
-            $table->int('level')->default(1);
+            $table->id(); // Columna de clave primaria
+            $table->integer('level')->default(1); // Corregido: int -> integer
             $table->string('position');
-            $table->timestamps();
+            $table->timestamps(); // Columnas created_at y updated_at
         });
     }
 
